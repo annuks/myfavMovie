@@ -14,15 +14,15 @@ export const  REMOVE_FROM_FAVOURITE = 'REMOVE_FROM_FAVOURITE';
 export const  SET_SHOW_FAVOURITE = 'SET_SHOW_FAVOURITE';
 
 //action creators
-export function addMovies(movies,id){
+export function addMovies(movies){
    return{
       type:ADD_MOVIES,
       movies,
-      id
+   
    }
 }
 
-export function addFavourite (movie,id){
+export function addFavourite (movie){
    return{
       type:ADD_FAVOURITE,
       movie,

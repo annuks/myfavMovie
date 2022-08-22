@@ -45,6 +45,7 @@ export default function movies(state = initialMovieState,action){
                }
 
          default:
+            
             return state; 
    }
 }

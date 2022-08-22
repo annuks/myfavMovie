@@ -8,7 +8,7 @@ import movies from './reducers';
 
 const store = legacy_createStore(movies);
 console.log('store',store);
-console.log('STATE',store.getState());
+console.log('BEFORE STATE',store.getState());
 
 
 // store.dispatch
