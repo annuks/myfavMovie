@@ -2,12 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
-import {legacy_createStore } from '@reduxjs/toolkit';
+import {legacy_createStore, applyMiddleware } from '@reduxjs/toolkit';
 //import movies from './reducers';
 import rootReducer from './reducers'
 
+//middleware code
 
-const store = legacy_createStore(rootReducer);
+// currying function    logger(obj)(next)(action)
+const logger = function ({dispatch, getState}){
+  return function (next){
+    return function (action){
+      console.log('ACTION_TYPE',action.type);
+      next(action);
+
+    }
+  }
+
+}
+
+
+const store = legacy_createStore(rootReducer, applyMiddleware(logger));
 console.log('store',store);
 console.log('BEFORE STATE',store.getState());
 
