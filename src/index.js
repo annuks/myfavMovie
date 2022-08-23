@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
 import {legacy_createStore } from '@reduxjs/toolkit';
-import movies from './reducers';
+//import movies from './reducers';
+import rootReducer from './reducers'
 
 
-const store = legacy_createStore(movies);
+const store = legacy_createStore(rootReducer);
 console.log('store',store);
 console.log('BEFORE STATE',store.getState());
 
